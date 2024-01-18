@@ -15,7 +15,16 @@ export default function CompUpload() {
       formData.append("file", fileData);
 
       try {
-        //  api check here
+        const response = await fetch("/api/pictures", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          console.log("File uploaded successfully");
+        } else {
+          console.error("File upload failed");
+        }
       } catch (error) {
         console.log("File uploading error: ", error);
       }
