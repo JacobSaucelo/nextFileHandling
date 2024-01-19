@@ -32,11 +32,18 @@ export default function CompUpload() {
   };
 
   return (
-    <section>
-      <h1>helllo world</h1>
-      <input type="file" onChange={handleFile} />
-      <button onClick={handleUpload} disabled={fileData ? false : true}>
-        upload file
+    <section className="flex gap-2 justify-center items-center flex-wrap">
+      <input
+        className="text-xs border rounded-sm w-full max-w-[250px]"
+        type="file"
+        onChange={handleFile}
+      />
+      <button
+        className="border max-w-[200px] p-1 rounded text-xs bg-black text-white cursor-pointer"
+        onClick={handleUpload}
+        disabled={fileData ? false : true}
+      >
+        Upload File
       </button>
     </section>
   );
